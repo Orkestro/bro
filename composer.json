@@ -1,0 +1,26 @@
+{
+    "name": "symfony-bro/bro",
+    "description": "Symfony Bro to bootstrap your common projects",
+    "keywords": ["symfony", "bro", "framework", "installer", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Symfony Bro Community",
+            "homepage": "http://symfonybro.com/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Bro\\": "src/Bro/" }
+    },
+    "require": {
+        "symfony/symfony-installer": "1.0.*@dev"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "bin": [
+        "bro"
+    ]
+}
