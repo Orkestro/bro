@@ -11,6 +11,7 @@
 
 namespace Bro\Installer;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -28,19 +29,18 @@ class IfyCommand extends Command
             ->setDescription('Broify your project.')
             ->setHelp('The <info>%command.name%</info> command broifies your project so you can use your bro.json '.
                 'to bootstrap your new projects.')
+            ->addArgument('project_directory', InputArgument::OPTIONAL, 'Symfony project directory which you want to Broify', './')
+            ->addArgument('json_file_name', InputArgument::OPTIONAL, 'The bro.json file name', 'bro.json')
+            ->addArgument('composer_json_file_name', InputArgument::OPTIONAL, 'Project composer.json file name', 'composer.json')
         ;
-    }
-
-    /**
-     * The ify command is only available when using the PHAR file.
-     */
-    public function isEnabled()
-    {
-        return 'phar://' === substr(__DIR__, 0, 7);
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
     {
+        $projectDir = realpath($input->getArgument('project_directory'));
 
+        $composerJsonFileData = json_decode(file_get_contents($projectDir.'/'.$input->getArgument('composer_json_file_name')));
+
+        var_dump($composerJsonFileData);
     }
 }

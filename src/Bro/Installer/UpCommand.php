@@ -11,6 +11,7 @@
 
 namespace Bro\Installer;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -28,15 +29,9 @@ class UpCommand extends Command
             ->setDescription('Set up your project using bro.json.')
             ->setHelp('The <info>%command.name%</info> command sets up the new Symfony project for you using already '.
                 'broified bro.json file.')
+            ->addArgument('json_file_name', InputArgument::OPTIONAL, 'The bro.json file name', 'bro.json')
+            ->addArgument('project_directory', InputArgument::OPTIONAL, 'Symfony project directory which you want to Broify', './')
         ;
-    }
-
-    /**
-     * The up command is only available when using the PHAR file.
-     */
-    public function isEnabled()
-    {
-        return 'phar://' === substr(__DIR__, 0, 7);
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
