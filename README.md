@@ -49,13 +49,13 @@ It will automatically take the `bro.json` file located in current directory and 
 To raise your new project using GitHub repository you just need to specify this repository in the `up` command like this:
 
 ```bash
-$ bro up git@github.com:SymfonyBro/standard-orm-edition.git
+$ bro up git@github.com:symfony-bro/standard-orm-edition.git
 ```
 
 or
 
 ```bash
-$ bro up https://github.com/SymfonyBro/standard-orm-edition
+$ bro up https://github.com/symfony-bro/standard-orm-edition
 ```
 
 ## Broify
