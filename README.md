@@ -1,6 +1,6 @@
 # Bro
 
-Symfony Bro to bootstrap and quick start your common projects
+Symfony Bro to bootstrap and quick start your common Symfony projects
 
 ## Installation
 
