@@ -26,13 +26,45 @@ it as follows:
 c:\> php bro
 ```
 
+## Broup
+
+### Using bro.json
+
+To raise your new project you need to get somewhere the `bro.json` file to use it with Bro like this:
+
+```bash
+$ bro up
+```
+
+or
+
+```bash
+$ bro up whatever.json
+```
+
+It will automatically take the `bro.json` file located in current directory and use it to broup.
+
+### Using GitHub
+
+To raise your new project using GitHub repository you just need to specify this repository in the `up` command like this:
+
+```bash
+$ bro up git@github.com:SymfonyBro/standard-orm-edition.git
+```
+
+or
+
+```bash
+$ bro up https://github.com/SymfonyBro/standard-orm-edition
+```
+
 ## Broify
 
 To broify your project run `bro ify` inside your project root.
 
 You will get then the `bro.json` file that you can use to bootstrap your next Symfony project using you current project bundles and settings.
 
-## What Bro does to your project
+## What Bro does to your host project
 
 First of all Bro looks to your `composer.json` and gets the Symfony edition you using.
 
