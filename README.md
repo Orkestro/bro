@@ -28,4 +28,16 @@ c:\> php bro
 
 ## Broify
 
+To broify your project run `bro ify` inside your project root.
 
+You will get then the `bro.json` file that you can use to bootstrap your next Symfony project using you current project bundles and settings.
+
+## What Bro does to your project
+
+First of all Bro looks to your `composer.json` and gets the Symfony edition you using.
+
+Then it throws away all the standard Symfony bundles already included in edition and takes all the stuff left.
+
+Based on this data Bro makes a `bro.json` file that contains all the included extensions.
+
+Then Bro gets your config files and appends it to the `bro.json` file so you can raise your typical config in pretty way on newly created project.
